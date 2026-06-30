@@ -17,7 +17,6 @@ export default function MoviePoster({ className, id, poster, smallPoster = false
         style={{
           width: smallPoster ? 85 : 150,
           height: smallPoster ? 130 : 250,
-          borderRadius: 20,
         }}
         resizeMode="cover"
       />

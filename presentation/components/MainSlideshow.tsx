@@ -15,13 +15,13 @@ export default function MainSlideshow({ movies }: Props) {
     <View className="h-[250px] w-full">
       <Carousel
         width={200}
-        height={350}
+        height={270}
         ref={ref}
         data={movies}
         renderItem={({ item }) => <MoviePoster id={item.id} poster={item.poster} />}
         style={{
           width,
-          height: 350,
+          height: 270,
           justifyContent: 'center',
           alignItems: 'center',
         }}

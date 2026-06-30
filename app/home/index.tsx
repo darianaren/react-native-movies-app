@@ -16,7 +16,7 @@ export default function HomeScreen() {
 
   return (
     <View className="mt-2" style={{ paddingTop: safeArea.top }}>
-      <Text className="mb-2 px-4 text-3xl font-bold">HomeScreen</Text>
+      <Text className="mb-2 px-4 text-3xl font-bold">MoviesApp</Text>
       <MainSlideshow movies={nowPlayingQuery?.data ?? []} />
     </View>
   );

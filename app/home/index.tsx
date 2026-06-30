@@ -21,23 +21,30 @@ export default function HomeScreen() {
         <Text className="mb-2 px-4 text-3xl font-bold">MoviesApp</Text>
 
         {/* Carousel */}
-        <MainSlideshow movies={nowPlayingQuery?.data ?? []} />
+        <MainSlideshow movies={nowPlayingQuery?.data?.pages.flat() ?? []} />
 
         {/* Popular */}
-        <MovieHorizontalList movies={popularQuery.data ?? []} title="Populares" className="mb-5" />
+        <MovieHorizontalList
+          movies={popularQuery?.data?.pages.flat() ?? []}
+          title="Populares"
+          className="mb-5"
+          loadNextPage={popularQuery.fetchNextPage}
+        />
 
         {/* Top Rated */}
         <MovieHorizontalList
-          movies={topRatedQuery.data ?? []}
+          movies={topRatedQuery?.data?.pages.flat() ?? []}
           title="Mejor Calificadas"
           className="mb-5"
+          loadNextPage={topRatedQuery.fetchNextPage}
         />
 
         {/* Upcoming */}
         <MovieHorizontalList
-          movies={upcomingQuery.data ?? []}
+          movies={upcomingQuery?.data?.pages.flat() ?? []}
           title="Próximamente"
           className="mb-5"
+          loadNextPage={upcomingQuery.fetchNextPage}
         />
       </View>
     </ScrollView>
